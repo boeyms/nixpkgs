@@ -18,8 +18,9 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/bin; cp cntlm $out/bin/;
-    mkdir -p $out/share/; cp COPYRIGHT README VERSION doc/cntlm.conf $out/share/;
-    mkdir -p $out/man/; cp doc/cntlm.1 $out/man/;
+    mkdir -p $out/share/cntlm;
+    cp COPYRIGHT README VERSION doc/cntlm.conf $out/share/cntlm;
+    mkdir -p $out/man/man1; cp doc/cntlm.1 $out/man/man1;
   '';
 
   meta = with stdenv.lib; {
